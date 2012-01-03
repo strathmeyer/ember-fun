@@ -2,13 +2,16 @@ var App = Em.Application.create();
 
 App.Person = Em.Object.extend({
     name: 'John Doe',
-    children: []
+    children: Em.ArrayProxy.create({
+        content: []
+    })
 });
 
-App.rootPerson = App.Person.create({
-    name: 'A',
-    children: [App.Person.create({name: 'B'})]
-});
+App.rootPerson = App.Person.create({name: 'A'});
+
+App.rootPerson.get('children').pushObject(
+    App.Person.create({name: 'B'})
+);
 
 App.PersonView = Em.View.extend({
     templateName: 'person',

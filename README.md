@@ -1,3 +1,4 @@
-*Don't clone this repo, download instead!*
+This branch is broken.
 
-[https://github.com/emberjs/starter-kit/downloads]
+Currently it doesn't even show the HTML. Just errors with
+"Uncaught RangeError: Maximum call stack size exceeded"
