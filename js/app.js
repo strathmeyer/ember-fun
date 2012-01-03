@@ -1,16 +1,24 @@
 var App = Em.Application.create();
 
-App.MyView = Em.View.extend({
-    mouseDown: function() {
-        //window.alert("hello world!");
-    }
+App.Person = Em.Object.extend({
+    name: 'John Doe',
+    children: []
 });
 
-App.TextField = Em.TextField.extend({
-    insertNewline: function () {
-        window.alert("asdf");
-    }
+App.rootPerson = App.Person.create({
+    name: 'A',
+    children: [App.Person.create({name: 'B'})]
 });
 
-App.foo = Em.Object.create({
+App.PersonView = Em.View.extend({
+    templateName: 'person',
+    addChild: function() {
+        var children = this.getPath('content.children');
+
+        children.pushObject(App.Person.create({
+            name: prompt('Name:')
+        }));
+
+        console.log(this, children);
+    }
 });
