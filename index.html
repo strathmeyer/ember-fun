@@ -16,7 +16,13 @@
 
     <script type="text/x-handlebars" data-template-name="person">
         {{#with content}}
-            {{name}} {{#view SC.Button target="contentView" action="addChild"}}+{{/view}}
+            {{name}} 
+
+            {{#if canHaveChildren}}
+                {{#view SC.Button target="contentView" action="addChild"}}+{{/view}}
+            {{else}}
+                [[YOU HAVE ENOUGH CHILDREN ALREADY!]]
+            {{/if}}
  
             {{#if children.length}}
                 {{#collection contentBinding="children" tagName="ul"}}
