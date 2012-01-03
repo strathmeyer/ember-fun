@@ -18,12 +18,12 @@
         {{#with content}}
             {{name}} {{#view SC.Button target="contentView" action="addChild"}}+{{/view}}
  
-            {{#if children}}
+            {{#if children.length}}
                 {{#collection contentBinding="children" tagName="ul"}}
                     {{view App.PersonView contentBinding="content"}}
                 {{/collection}}
             {{else}}
-                (nope)
+                (no children yet)
             {{/if}}
         {{/with}}
         

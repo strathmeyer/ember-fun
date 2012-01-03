@@ -26,7 +26,7 @@ App.PersonView = Em.View.extend({
         var children = this.getPath('content.children'),
             name = prompt('Name:');
 
-        children.pushObject(App.newPerson(name));
+        children.unshiftObject(App.newPerson(name));
 
         console.log(this, children);
     }
