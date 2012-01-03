@@ -1,3 +1,3 @@
-*Don't clone this repo, download instead!*
+In this repo, I tinker with Ember.js
 
-[https://github.com/emberjs/starter-kit/downloads]
+Check out the branches for various examples.
