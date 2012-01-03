@@ -1,4 +1,3 @@
-This branch is broken.
+This branch is examines recursive model/views.
 
-Currently it doesn't even show the HTML. Just errors with
-"Uncaught RangeError: Maximum call stack size exceeded"
+The branch is currently working.

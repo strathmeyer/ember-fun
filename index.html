@@ -16,19 +16,13 @@
 
     <script type="text/x-handlebars" data-template-name="person">
         {{#with content}}
-            {{name}}
-
-            {{#if children}}
-                <ul>
-                    {{#collection contentBinding="children"}}
-                        {{view App.PersonView contentBinding="content"}}
-                    {{/collection}}
-                </ul>
-            {{else}}
-                (no children)
-            {{/if}}
+            {{name}} {{#view SC.Button target="contentView" action="addChild"}}+{{/view}}
+ 
+            {{#collection contentBinding="children" tagName="ul"}}
+                {{view App.PersonView contentBinding="content"}}
+            {{/collection}}
         {{/with}}
-        {{#view SC.Button target="contentView" action="addChild"}}Add Child{{/view}}
+        
     </script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
