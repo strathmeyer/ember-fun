@@ -11,16 +11,12 @@ App.newPerson = function(name) {
     return App.Person.create({
         name: name,
         children: []
-    });  
+    });
 };
 
 App.rootPerson = App.Person.create({
     name: 'A',
-    children: [
-        App.Person.create({
-            name: 'B',
-            children: [App.newPerson()]})
-    ]
+    children: []
 });
 
 App.PersonView = Em.View.extend({
